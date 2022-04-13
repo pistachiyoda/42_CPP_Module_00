@@ -200,11 +200,14 @@ int PhoneBook::get_index_input()
 
 void PhoneBook::show_user(int index)
 {
-    std::cout << "first name: " << contacts[index].get_first_name() << std::endl;
-    std::cout << "last name: " << contacts[index].get_last_name() << std::endl;
-    std::cout << "nickname: " << contacts[index].get_nickname() << std::endl;
-    std::cout << "phone number: " << contacts[index].get_phone_number() << std::endl;
-    std::cout << "darkest secret: " << contacts[index].get_dakest_secret() << std::endl;
+    std::cout << "This is index:" << index + 1 << "'s information." << std::endl;
+    std::cout << std::endl;
+    std::cout << std::setw(18) << "first name: " << contacts[index].get_first_name() << std::endl;
+    std::cout << std::setw(18) << "last name: " << contacts[index].get_last_name() << std::endl;
+    std::cout << std::setw(18) << "nickname: " << contacts[index].get_nickname() << std::endl;
+    std::cout << std::setw(18) << "phone number: " << contacts[index].get_phone_number() << std::endl;
+    std::cout << std::setw(18) << "darkest secret: " << contacts[index].get_dakest_secret() << std::endl;
+    std::cout << std::endl;
 }
 
 void PhoneBook::search_user(void)
