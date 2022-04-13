@@ -1,3 +1,5 @@
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 #include <string>
 #include <iostream>
 
@@ -24,3 +26,4 @@ public:
     std::string get_phone_number();
     std::string get_dakest_secret();
 };
+#endif
