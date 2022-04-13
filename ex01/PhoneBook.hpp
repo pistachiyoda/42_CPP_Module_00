@@ -1,7 +1,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#define MAX 3 // 8に直す
+#define MAX 8
 
 #include "Contact.hpp"
 #include <iostream>
