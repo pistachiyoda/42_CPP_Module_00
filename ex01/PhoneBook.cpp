@@ -160,6 +160,8 @@ bool PhoneBook::is_digit_str(std::string str)
     int i;
 
     i = 0;
+    if (!str[0])
+        return (false);
     while (str[i])
     {
         if (!isdigit(str[i]))
