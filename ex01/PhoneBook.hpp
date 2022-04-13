@@ -26,7 +26,8 @@ private:
 public:
     PhoneBook();
     ~PhoneBook();
-    void show_prompt(void);
+    void show_welcome_prompt(void);
+    void show_exit_prompt(void);
     void show_commands(void);
     void add_user(void);
     void search_user(void);

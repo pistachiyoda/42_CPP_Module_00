@@ -3,13 +3,14 @@
 
 int main()
 {
-    PhoneBook PhoneBook;
+    PhoneBook PhoneBook; // インスタンスは小文字
     std::string command;
 
-    PhoneBook.show_prompt();
+    PhoneBook.show_welcome_prompt();
     while (true)
     {
         PhoneBook.show_commands();
+        std::cout << "$>> ";
         std::getline(std::cin, command);
         if (command == "ADD")
         {
@@ -21,11 +22,15 @@ int main()
         }
         else if (command == "EXIT")
         {
-            std::cout << "EXIT." << std::endl;
+            PhoneBook.show_exit_prompt();
             break;
         }
         else
+        {
+            std::cerr << "\033[31mOnly ADD, SEARCH, or EXIT commands are acceptable!!\033[m" << std::endl;
+            std::cout << std::endl;
             continue;
+        }
     }
     return (0);
 }
