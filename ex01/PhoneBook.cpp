@@ -45,6 +45,8 @@ void PhoneBook::show_commands(void)
     std::cout << "< EXIT >" << std::endl;
     std::cout << "	- The program quits and the contacts are lost forever!" << std::endl;
     std::cout << std::endl;
+    std::cout << "If you try to input strange value, program will be killed immediately!" << std::endl;
+    std::cout << std::endl;
 }
 
 bool PhoneBook::is_blank_str(std::string str)
@@ -187,7 +189,9 @@ int PhoneBook::get_index_input()
         std::getline(std::cin, input);
         if (is_digit_str(input))
         {
+
             index = std::stoi(input);
+
             if (is_valid_index(index))
                 return (index);
         }
