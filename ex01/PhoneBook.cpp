@@ -70,6 +70,14 @@ std::string PhoneBook::get_contact_input(std::string prop)
         std::cout << "Please input " << prop << "." << std::endl;
         std::cout << "$>> ";
         std::getline(std::cin, input);
+        if (prop == "phone number")
+        {
+            if (!is_digit_str(input))
+            {
+                std::cerr << "\033[31mPlease input NUMBER for phone number.\033[m" << std::endl;
+                continue;
+            }
+        }
         if (!this->is_blank_str(input))
             return (input);
         std::cerr << "\033[31mData cannot be blank, please input something.\033[m" << std::endl;
