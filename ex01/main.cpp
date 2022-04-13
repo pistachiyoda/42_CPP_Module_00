@@ -3,28 +3,28 @@
 
 int main()
 {
-    PhoneBook PhoneBook; // インスタンスは小文字
+    PhoneBook phoneBook;
     std::string command;
 
     try
     {
-        PhoneBook.show_welcome_prompt();
+        phoneBook.show_welcome_prompt();
         while (true)
         {
-            PhoneBook.show_commands();
+            phoneBook.show_commands();
             std::cout << "$>> ";
             std::getline(std::cin, command);
             if (command == "ADD")
             {
-                PhoneBook.add_user();
+                phoneBook.add_user();
             }
             else if (command == "SEARCH")
             {
-                PhoneBook.search_user();
+                phoneBook.search_user();
             }
             else if (command == "EXIT")
             {
-                PhoneBook.show_exit_prompt();
+                phoneBook.show_exit_prompt();
                 break;
             }
             else if (std::cin.eof())
