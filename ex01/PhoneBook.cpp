@@ -171,7 +171,7 @@ bool PhoneBook::is_digit_str(std::string str)
 
 bool PhoneBook::is_valid_index(int input)
 {
-    if (input < 0)
+    if (input <= 0)
         return (false);
     if (input > (this->is_added_more_than_max ? MAX : this->index))
         return (false);
