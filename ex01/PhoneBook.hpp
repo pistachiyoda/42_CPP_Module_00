@@ -18,6 +18,7 @@ private:
     std::string get_contact_input(std::string prop);
     bool is_blank_str(std::string str);
     int get_index_input();
+    bool is_digit_str(std::string str);
     bool is_valid_index(int input);
     void show_users(void);
     void show_user(int index);

@@ -144,6 +144,20 @@ void PhoneBook::show_users(void)
     std::cout << "---------------------------------------------" << std::endl;
 }
 
+bool PhoneBook::is_digit_str(std::string str)
+{
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        if (!isdigit(str[i]))
+            return (false);
+        i++;
+    }
+    return (true);
+}
+
 bool PhoneBook::is_valid_index(int input)
 {
     if (input < 0)
@@ -163,9 +177,12 @@ int PhoneBook::get_index_input()
         std::cout << "Please input index number you want to see." << std::endl;
         std::cout << "$>> ";
         std::getline(std::cin, input);
-        index = std::stoi(input); // エラーハンドリング
-        if (is_valid_index(index))
-            return (index);
+        if (is_digit_str(input))
+        {
+            index = std::stoi(input);
+            if (is_valid_index(index))
+                return (index);
+        }
         std::cerr << "\033[31mPlease input valid index number.\033[m" << std::endl;
     }
 }
