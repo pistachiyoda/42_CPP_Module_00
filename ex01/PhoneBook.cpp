@@ -172,7 +172,7 @@ bool PhoneBook::is_valid_index(int input)
 {
     if (input < 0)
         return (false);
-    if (input > this->index)
+    if (input > (this->is_added_more_than_max ? MAX : this->index))
         return (false);
     return (true);
 }
@@ -189,9 +189,7 @@ int PhoneBook::get_index_input()
         std::getline(std::cin, input);
         if (is_digit_str(input))
         {
-
             index = std::stoi(input);
-
             if (is_valid_index(index))
                 return (index);
         }
