@@ -30,6 +30,7 @@ void PhoneBook::show_exit_prompt(void)
     std::cout << "░█▀▀░█▀█░█▀█░█▀▄░░░█▀▄░█░█░█▀▀░█░█" << std::endl;
     std::cout << "░█░█░█░█░█░█░█░█░░░█▀▄░░█░░█▀▀░▀░▀" << std::endl;
     std::cout << "░▀▀▀░▀▀▀░▀▀▀░▀▀░░░░▀▀░░░▀░░▀▀▀░▀░▀" << std::endl;
+    std::cout << std::endl;
 }
 
 void PhoneBook::show_commands(void)
