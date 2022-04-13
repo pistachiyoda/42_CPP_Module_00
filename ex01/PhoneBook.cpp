@@ -208,6 +208,12 @@ void PhoneBook::search_user(void)
 {
     int index;
 
+    if (this->index == 0)
+    {
+        std::cerr << "\033[31mPlease add user first.\033[m" << std::endl;
+        std::cout << std::endl;
+        return;
+    }
     PhoneBook::show_users();
     index = PhoneBook::get_index_input();
     PhoneBook::show_user(index - 1);
