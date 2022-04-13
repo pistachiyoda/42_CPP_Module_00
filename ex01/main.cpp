@@ -9,9 +9,9 @@ int main()
     try
     {
         phoneBook.show_welcome_prompt();
+        phoneBook.show_commands();
         while (true)
         {
-            phoneBook.show_commands();
             std::cout << "$>> ";
             std::getline(std::cin, command);
             if (command == "ADD")
