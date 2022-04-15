@@ -107,7 +107,7 @@ void PhoneBook::add_user(void)
 
 std::string PhoneBook::proc_output(std::string raw_data)
 {
-    if (raw_data.length() >= 10)
+    if (raw_data.length() > 10)
     {
         raw_data[9] = '.';
         return (raw_data.substr(0, 10));
