@@ -196,7 +196,7 @@ int PhoneBook::get_index_input()
             std::exit(0);
         if (is_digit_str(input))
         {
-            index = std::stoi(input);
+            index = std::atoi(input.c_str());
             if (is_valid_index(index))
                 return (index);
         }

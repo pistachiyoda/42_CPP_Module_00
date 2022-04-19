@@ -1,5 +1,5 @@
 NAME = ex02
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 SRCS = tests.cpp Account.cpp
 OBJS = $(SRCS:.cpp=.o)
 
