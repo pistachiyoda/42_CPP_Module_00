@@ -8,6 +8,7 @@
 #include <string>
 #include <ctype.h>
 #include <iomanip>
+#include <cstdlib>
 
 class PhoneBook
 {

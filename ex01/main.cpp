@@ -27,10 +27,8 @@ int main()
                 phoneBook.show_exit_prompt();
                 break;
             }
-            else if (std::cin.eof())
-            {
+            else if (std::cin.good() == 0)
                 return (0);
-            }
             else
             {
                 std::cerr << "\033[31mOnly ADD, SEARCH, or EXIT commands are acceptable!!\033[m" << std::endl;

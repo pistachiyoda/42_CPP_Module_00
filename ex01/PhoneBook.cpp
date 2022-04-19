@@ -73,6 +73,8 @@ std::string PhoneBook::get_contact_input(std::string prop)
         std::cout << "Please input " << prop << "." << std::endl;
         std::cout << "$>> ";
         std::getline(std::cin, input);
+        if (std::cin.good() == 0)
+            std::exit(0);
         if (prop == "phone number")
         {
             if (!is_digit_str(input))
@@ -190,6 +192,8 @@ int PhoneBook::get_index_input()
         std::cout << "Please input index number you want to see." << std::endl;
         std::cout << "$>> ";
         std::getline(std::cin, input);
+        if (std::cin.good() == 0)
+            std::exit(0);
         if (is_digit_str(input))
         {
             index = std::stoi(input);
