@@ -1,32 +1,34 @@
 #include <iostream>
+#include <string>
 
-char ft_toupper(char c)
+void megaphone(char **str, int argc)
 {
-    if (c >= 'a' && c <= 'z')
-        return (c - ('a' - 'A'));
-    return (c);
+    std::string upperStr = "";
+    int i = 1;
+    int j;
+
+    while (i < argc)
+    {
+        j = 0;
+        while (str[i][j])
+        {
+            if (str[i][j] >= 'a' && str[i][j] <= 'z')
+                upperStr += std::toupper(str[i][j]);
+            else
+                upperStr += str[i][j];
+            j++;
+        }
+        i++;
+    }
+    std::cout << upperStr;
 }
 
 int main(int argc, char **argv)
 {
-    int i = 1;
-    int j = 0;
-
     if (argc == 1)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     else
-    {
-        while (argc > i)
-        {
-            j = 0;
-            while (argv[i][j])
-            {
-                std::cout << ft_toupper(argv[i][j]);
-                j++;
-            }
-            i++;
-        }
-    }
+        megaphone(argv, argc);
     std::cout << std::endl;
     return (0);
 }
