@@ -2,8 +2,8 @@
 
 PhoneBook::PhoneBook()
 {
-    this->index = 0;
-    this->is_added_more_than_max = false;
+    index = 0;
+    is_added_more_than_max = false;
 }
 
 PhoneBook::~PhoneBook()
@@ -83,7 +83,7 @@ std::string PhoneBook::get_contact_input(std::string prop)
                 continue;
             }
         }
-        if (!this->is_blank_str(input))
+        if (!is_blank_str(input))
             return (input);
         std::cerr << RED << "Data cannot be blank, please input something." << RESET << std::endl;
     }
@@ -91,18 +91,18 @@ std::string PhoneBook::get_contact_input(std::string prop)
 
 void PhoneBook::add_user(void)
 {
-    if (this->index == MAX)
+    if (index == MAX)
     {
-        this->index = 0;
-        this->is_added_more_than_max = true;
+        index = 0;
+        is_added_more_than_max = true;
     }
-    contacts[this->index].set_first_name(this->get_contact_input("first name"));
-    contacts[this->index].set_last_name(this->get_contact_input("last name"));
-    contacts[this->index].set_nickname(this->get_contact_input("nickname"));
-    contacts[this->index].set_phone_number(this->get_contact_input("phone number"));
-    contacts[this->index].set_darkest_secret(this->get_contact_input("darkest secret"));
+    contacts[index].set_first_name(get_contact_input("first name"));
+    contacts[index].set_last_name(get_contact_input("last name"));
+    contacts[index].set_nickname(get_contact_input("nickname"));
+    contacts[index].set_phone_number(get_contact_input("phone number"));
+    contacts[index].set_darkest_secret(get_contact_input("darkest secret"));
 
-    this->index++;
+    index++;
     std::cout << GREEN << "New user is added!" << RESET << std::endl;
     std::cout << std::endl;
 }
@@ -139,7 +139,7 @@ void PhoneBook::show_users(void)
     std::cout << "---------------------------------------------" << std::endl;
 
     i = 0;
-    max = this->is_added_more_than_max ? MAX : this->index;
+    max = is_added_more_than_max ? MAX : index;
     while (max > i)
     {
         std::cout << "|";
@@ -177,7 +177,7 @@ bool PhoneBook::is_valid_index(int input)
 {
     if (input <= 0)
         return (false);
-    if (input > (this->is_added_more_than_max ? MAX : this->index))
+    if (input > (is_added_more_than_max ? MAX : index))
         return (false);
     return (true);
 }
@@ -218,15 +218,15 @@ void PhoneBook::show_user(int index)
 
 void PhoneBook::search_user(void)
 {
-    int index;
+    int i;
 
-    if (this->index == 0)
+    if (index == 0)
     {
         std::cerr << RED << "Please add user first." << RESET << std::endl;
         std::cout << std::endl;
         return;
     }
     PhoneBook::show_users();
-    index = PhoneBook::get_index_input();
-    PhoneBook::show_user(index - 1);
+    i = PhoneBook::get_index_input();
+    PhoneBook::show_user(i - 1);
 }
