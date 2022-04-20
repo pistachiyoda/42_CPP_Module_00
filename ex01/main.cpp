@@ -31,7 +31,7 @@ int main()
                 return (0);
             else
             {
-                std::cerr << "\033[31mOnly ADD, SEARCH, or EXIT commands are acceptable!!\033[m" << std::endl;
+                std::cerr << RED << "Only ADD, SEARCH, or EXIT commands are acceptable!!" << RESET << std::endl;
                 std::cout << std::endl;
                 continue;
             }
@@ -39,7 +39,7 @@ int main()
     }
     catch (const std::exception &e)
     {
-        std::cerr << "\033[31mThis program terminates because an strange value was entered!!\033[m" << std::endl;
+        std::cerr << RED << "This program terminates because an strange value was entered!!" << RESET << std::endl;
         std::cerr << e.what() << std::endl;
         return (1);
     }

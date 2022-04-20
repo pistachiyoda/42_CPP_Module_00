@@ -79,13 +79,13 @@ std::string PhoneBook::get_contact_input(std::string prop)
         {
             if (!is_digit_str(input))
             {
-                std::cerr << "\033[31mPlease input NUMBER for phone number.\033[m" << std::endl;
+                std::cerr << RED << "Please input NUMBER for phone number." << RESET << std::endl;
                 continue;
             }
         }
         if (!this->is_blank_str(input))
             return (input);
-        std::cerr << "\033[31mData cannot be blank, please input something.\033[m" << std::endl;
+        std::cerr << RED << "Data cannot be blank, please input something." << RESET << std::endl;
     }
 }
 
@@ -103,7 +103,7 @@ void PhoneBook::add_user(void)
     contacts[this->index].set_darkest_secret(this->get_contact_input("darkest secret"));
 
     this->index++;
-    std::cout << "\033[32mNew user is added!\033[m" << std::endl;
+    std::cout << GREEN << "New user is added!" << RESET << std::endl;
     std::cout << std::endl;
 }
 
@@ -200,7 +200,7 @@ int PhoneBook::get_index_input()
             if (is_valid_index(index))
                 return (index);
         }
-        std::cerr << "\033[31mPlease input valid index number.\033[m" << std::endl;
+        std::cerr << RED << "Please input valid index number." << RESET << std::endl;
     }
 }
 
@@ -222,7 +222,7 @@ void PhoneBook::search_user(void)
 
     if (this->index == 0)
     {
-        std::cerr << "\033[31mPlease add user first.\033[m" << std::endl;
+        std::cerr << RED << "Please add user first." << RESET << std::endl;
         std::cout << std::endl;
         return;
     }
