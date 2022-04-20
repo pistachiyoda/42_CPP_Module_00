@@ -41,15 +41,9 @@ int main()
             }
         }
     }
-    catch (std::ios_base::failure &e)
-    {
-        std::cerr << RED << "STDIN or STDOUT is closed!!" << RESET << std::endl;
-        std::cerr << e.what() << std::endl;
-        return (1);
-    }
     catch (const std::exception &e)
     {
-        std::cerr << RED << "This program terminates because an strange value was entered!!" << RESET << std::endl;
+        std::cerr << RED << "PhoneBook programd end because of something." << RESET << std::endl;
         std::cerr << e.what() << std::endl;
         return (1);
     }
