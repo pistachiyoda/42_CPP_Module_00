@@ -1,10 +1,14 @@
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <fstream>
 
 int main()
 {
     PhoneBook phoneBook;
     std::string command;
+
+    std::cout.exceptions(std::ios::badbit | std::ios::eofbit | std::ios::failbit);
+    std::cin.exceptions(std::ios::badbit | std::ios::eofbit | std::ios::failbit);
 
     try
     {
@@ -36,6 +40,12 @@ int main()
                 continue;
             }
         }
+    }
+    catch (std::ios_base::failure &e)
+    {
+        std::cerr << RED << "STDIN or STDOUT is closed!!" << RESET << std::endl;
+        std::cerr << e.what() << std::endl;
+        return (1);
     }
     catch (const std::exception &e)
     {
